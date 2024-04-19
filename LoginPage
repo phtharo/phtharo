@@ -1,0 +1,86 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:frontend/styles/button.dart';
+import "package:frontend/app_styles.dart";
+
+class LoginPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Sign In'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Email or Phone Number',
+              ),
+            ),
+            SizedBox(height: 16),
+            TextField(
+              obscureText: true,
+              decoration: InputDecoration(
+                labelText: 'Password',
+              ),
+            ),
+            SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                // Handle sign-in logic here
+              },
+              child: Text('Sign In'),
+            ),
+            SizedBox(height: 16),
+            TextButton(
+              onPressed: () {
+                // Navigate to the forgot password screen
+              },
+              child: Text('Forgot password?'),
+            ),
+            SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  onPressed: () {
+                    // Sign in with Gmail
+                  },
+                  icon: Icon(Icons.mail),
+                ),
+                IconButton(
+                  onPressed: () {
+                    // Sign in with Facebook
+                  },
+                  icon: Icon(Icons.facebook),
+                ),
+                IconButton(
+                  onPressed: () {
+                    // Sign in with Apple
+                  },
+                  icon: Icon(Icons.apple),
+                ),
+              ],
+            ),
+            SizedBox(height: 16),
+            TextButton(
+              onPressed: () {
+                // Navigate to the sign-up screen
+              },
+              child: Text('Don’t have an account? Sign Up'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+void main() {
+  runApp(MaterialApp(
+    home: LoginPage(),
+  ));
+}
